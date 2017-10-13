@@ -1,4 +1,8 @@
 import requests
+import pandas
+
+
+NumberBatchData = pandas.read_hdf('mini.h5')
 
 
 class Edge:
@@ -204,5 +208,37 @@ def GetEdgesByRelation(edges,relation):
 
 
 
+
+def Similarity(Concept1,Concept2):
+
+    Term1 = '/c/en/' + Concept1
+    Term2 = '/c/en/' + Concept2
+
+    Vector1 = NumberBatchData.loc[Term1]
+    Vector2 = NumberBatchData.loc[Term2]
+
+    Temp = Vector1*Vector2
+
+    DotProduct = Temp.sum()
+
+    SquaredVec1 = Vector1.pow(2)
+    SquaredVec2 = Vector2.pow(2)
+
+
+    SumSquaredVec1 = SquaredVec1.sum()
+    SumSquaredVec2 = SquaredVec2.sum()
+
+    Magnitude1 = pow(SumSquaredVec1,0.5)
+    Magnitude2 = pow(SumSquaredVec2,0.5)
+
+
+    Temp = Magnitude1*Magnitude2
+
+
+
+    sim = DotProduct/Temp
+
+
+    return sim
 
 
