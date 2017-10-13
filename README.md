@@ -4,8 +4,9 @@ This is a simple interface library to ConceptNet ( conceptnet.io ) by Python.
 
 To use it :
 
-1 - You need install Requests library (http://docs.python-requests.org/en/master/).
-2 - Import it to your project.
+1 - Download this data file  http://conceptnet.s3.amazonaws.com/precomputed-data/2016/numberbatch/17.06/mini.h5 , put it in the same folder with the library.
+2 - Install these libraries pandas, requests and tables.
+3 - Import it to your project.
 
 --------------------------------------------------------------------------------------------------
 
@@ -39,3 +40,7 @@ Functions :
 
 
 6 - GetEdgesByRelation(edges,relation) take a list of edges (of class Edge) and return edges have the given relation.
+
+
+
+7 - Similarity(Concept1, Concept2) measure the semantic Similarity between to concepts, depends on the word embeddings provided by ConceptNet Numberbatch.
