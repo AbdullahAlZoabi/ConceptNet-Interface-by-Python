@@ -4,10 +4,6 @@ import pandas
 NumberBatchData = pandas.read_hdf('mini.h5')
 
 
-
-
-
-
 class Edge:
     StartNode = ""
     EndNode = ""
