@@ -17,6 +17,8 @@ class Edge:
     def Get_StartNode(self):
         return self.StartNode
 
+		
+		
     def Set_EndNode(self,lable):
         self.EndNode = lable
 
